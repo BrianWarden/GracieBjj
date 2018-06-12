@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+</head>
+
+<body>
+    <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="{% url 'home' %}">
+                <img src="https://static1.squarespace.com/static/55de0a8ce4b02530d9097a22/t/58ad1af63e00be979c2ecc68/1487740177301/?format=500w" width="30" height="30">
+                Gracie St.Pete
+            </a>
+        </div>
+        <div class="navbar-end">
+                <a href='{% url 'library' %}'class="navbar-item">
+                    Library
+                </a>
+                <a class="navbar-item">
+                    Search
+                </a>
+                <a class="navbar-item" href="javascript:{document.getElementById('logout').submit()}">
+                    Logout
+                </a>
+                <form id="logout" method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <input type="hidden" />
+                </form>
+            </div>
+        </div>
+       
+    </nav>
+
+    {% block body %}
+    {% endblock %}
+</body>
+
+</html>
